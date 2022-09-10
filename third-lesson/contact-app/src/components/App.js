@@ -1,8 +1,8 @@
 import "../css/App.css";
 import ListContacts from "./ListContacts";
 import { useState } from 'react'
-
 const App = () => {
+
 
   const [contacts, setContacts] = useState(
     [
@@ -26,18 +26,13 @@ const App = () => {
       },
     ])
 
-  // setTimeout(() => {
-  //   setContacts([{
-  //     id: "tyler",
-  //     name: "Tyler McGinnis",
-  //     handle: "tylermcginnis",
-  //     avatarURL: "http://localhost:5001/tyler.jpg",
-  //   }])
-  // }, 5000)
+  const removeContact = (contact)=>{
+    setContacts(contacts.filter( c => contact.id !== c.id))
+  }
 
   return (
     <div>
-      <ListContacts contacts={contacts} />
+      <ListContacts  onDeleteContact={removeContact} contacts={contacts} />
     </div>
   )
 };

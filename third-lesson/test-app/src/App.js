@@ -2,9 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 
-const students = ['mohamed', 'ali', 'hossam', 'hello', 'man']
 
-function AppTest() {
+const StudentList = ({students})=>{
+  return <ol>
+    {students.map(student => <li key={student}>{student}</li> )}
+  </ol>
+}
+
+function App() {
+  const students = ['mohamed', 'ali', 'hossam', 'hello', 'man']
+
   // const studentElements = []
   // for (const s of students) {
   //   studentElements.push(<li >{s}</li>)
@@ -14,34 +21,35 @@ function AppTest() {
   //   return <li>{s}</li>
   // })
 
-  const elements = []
-  students.forEach(student => {
-    elements.push(<li>{student}</li>)
 
-  })
+  // const elements = []
+  // students.forEach(student => {
+  //   elements.push(<li>{student}</li>)
+
+  // })
 
 
-  const studentElements = students.map(s =>
-   <li>
-      <p>{s}</p>
-      <p>{s}</p>
-    </li>
-  )
+  // const studentElements = students.map(s =>
+  //  <li>
+  //     <p>{s}</p>
+  //     <p>{s}</p>
+  //   </li>
+  // )
 
 
   return (
-    <ol>
-
-      {
-        studentElements
-      }
-    </ol>
+    <StudentList students={students} />
   )
+    // <ol>
+
+    //   {
+    //     studentElements
+    //   }
+    // </ol>
+  
 }
 
 
 
-function App() {
 
-}
 export default App;
