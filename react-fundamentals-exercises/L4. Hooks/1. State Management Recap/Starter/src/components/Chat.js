@@ -4,6 +4,7 @@ import {useState} from 'react'
 const Chat = ({user, users, messages, addMessage})=>{
 
     const [message, setMessage] = useState('')
+    
 
     const isDisabled = () => {
       return message === "";
@@ -12,6 +13,7 @@ const Chat = ({user, users, messages, addMessage})=>{
     const sendHandler = (e)=>{
         e.preventDefault()
         addMessage(message, user.username)
+        setMessage('')
     }
     const typeHandler = (e)=>{
         setMessage(e.target.value)        
