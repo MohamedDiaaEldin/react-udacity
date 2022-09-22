@@ -1,5 +1,6 @@
 import "../css/App.css";
 import ListContacts from "./ListContacts";
+
 import { useState, useEffect } from 'react'
 import * as contactsAPI from '../utils/ContactsAPI'
 
@@ -20,10 +21,15 @@ const App = () => {
     }
     
     getContacts()
+
   }, [])
 
   const removeContact = (contact)=>{
+    // remove from database
+    contactsAPI.remove(contact)
+    // UI change
     setContacts(contacts.filter( c => contact.id !== c.id))
+
   }
 
   return (
