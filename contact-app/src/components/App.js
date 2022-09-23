@@ -13,9 +13,10 @@ const App = () => {
   //   avatarURL: "http://localhost:5001/tyler.jpg",
   // }
   const [contacts, setContacts] = useState([])
-
+  
   useEffect(()=>{
     const getContacts = async ()=>{
+      console.log('from effect')
       const res = await contactsAPI.getAll();
       setContacts(res);
     }
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <div>
       <ListContacts  onDeleteContact={removeContact} contacts={contacts} />
+
     </div>
   )
 };

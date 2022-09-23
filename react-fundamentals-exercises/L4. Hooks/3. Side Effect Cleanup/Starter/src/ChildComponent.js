@@ -2,11 +2,29 @@ import React, { useState, useEffect } from "react";
 
 function ChildComponent() {
   const [color, setColor] = useState("red");
-
+  
+  
   useEffect(() => {
-    setTimeout(() => setColor("green"), 3000);
+    let mounted = true;
+
+    setTimeout(() => {
+      if (mounted) {
+        setColor("green");
+      }
+       
+      else{// for testing
+        console.log('cancled')
+      }
+    }, 3000);
+
+    return () => {
+      mounted = false;
+    };
   });
+
 
   return <p style={{ color }}>{color}</p>;
 }
+
+
 export default ChildComponent;
