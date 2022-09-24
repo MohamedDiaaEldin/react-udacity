@@ -19,9 +19,7 @@ const App = () => {
       setContacts(res);
       
     }
-    
     getContacts()
-
   }, [])
 
   const removeContact = (contact)=>{

@@ -27,9 +27,7 @@ const ListContacts = ({ contacts, onDeleteContact }) => {
             value={query}
             onChange={(event) => updateQuery(event.target.value)}
           />
-          <Link className="add-contact" to="/create">
-            hello there
-          </Link>
+          <Link className="add-contact" to="/search"></Link>
         </div>
 
         {showingContacts.length !== contacts.length && (
