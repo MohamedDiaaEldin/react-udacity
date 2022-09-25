@@ -20,15 +20,27 @@ function App() {
   }, [])
   
 
-
+  const [selected, setSelected] = useState('')
+  const changeHandler = (e)=>{
+    console.log(e.target.value)
+  }
+  
   return (
-    <ol>
-      {books.map(book => {
-        console.log('from map')
-       return <Book key={book.id} name={book.title}/>
-      })
-      }
-    </ol>
+    <select selected={selected}>
+      <option value="two">TWO</option>
+      <option value="three">three</option>
+      <option value="four">four</option>
+      <option value="six">six</option>
+      <option value="none">NONE</option>
+    </select>
+
+    // <ol>
+    //   {books.map(book => {
+    //     console.log('from map')
+    //    return <Book key={book.id} name={book.title}/>
+    //   })
+    //   }
+    // </ol>
   );
 }
 
